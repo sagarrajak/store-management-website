@@ -12,7 +12,6 @@ var    product       =   mongoose.Schema({
    detail   :  {   type : String }
 
 });
-
 module.exports = {
 
      model  : mongoose.model( 'product' ,  product),
