@@ -1,0 +1,10 @@
+[
+  {"name":"Items"},
+  {"name":"Dashboard"},
+  {"name":"About"},
+  {"name":"Employee"},
+  {"name":"Costumer"},
+  {"name":"Checkout"},
+  {"name":"Logout"}
+
+]

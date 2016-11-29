@@ -1,0 +1,218 @@
+{
+  "html_attributions" : [],
+  "result" : {
+    "address_components" : [
+      {
+        "long_name" : "National Institute of Technology",
+        "short_name" : "National Institute of Technology",
+        "types" : [ "neighborhood", "political" ]
+      },
+      {
+        "long_name" : "Sector 1",
+        "short_name" : "Sector 1",
+        "types" : [ "sublocality_level_1", "sublocality", "political" ]
+      },
+      {
+        "long_name" : "Rourkela",
+        "short_name" : "Rourkela",
+        "types" : [ "locality", "political" ]
+      },
+      {
+        "long_name" : "Sundargarh",
+        "short_name" : "Sundargarh",
+        "types" : [ "administrative_area_level_2", "political" ]
+      },
+      {
+        "long_name" : "Odisha",
+        "short_name" : "OD",
+        "types" : [ "administrative_area_level_1", "political" ]
+      },
+      {
+        "long_name" : "India",
+        "short_name" : "IN",
+        "types" : [ "country", "political" ]
+      },
+      {
+        "long_name" : "769006",
+        "short_name" : "769006",
+        "types" : [ "postal_code" ]
+      }
+    ],
+    "adr_address" : "\u003cspan class=\"extended-address\"\u003eNational Institute of Technology, Sector 1\u003c/span\u003e, \u003cspan class=\"locality\"\u003eRourkela\u003c/span\u003e, \u003cspan class=\"region\"\u003eOdisha\u003c/span\u003e \u003cspan class=\"postal-code\"\u003e769006\u003c/span\u003e, \u003cspan class=\"country-name\"\u003eIndia\u003c/span\u003e",
+    "formatted_address" : "National Institute of Technology, Sector 1, Rourkela, Odisha 769006, India",
+    "formatted_phone_number" : "0661 246 2113",
+    "geometry" : {
+      "location" : {
+        "lat" : 22.249701,
+        "lng" : 84.89950259999999
+      }
+    },
+    "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/doctor-71.png",
+    "id" : "ca6e1270ade6cc19e451dd684da32ea8506cf2c4",
+    "international_phone_number" : "+91 661 246 2113",
+    "name" : "Health Centre",
+    "opening_hours" : {
+      "open_now" : false,
+      "periods" : [
+        {
+          "close" : {
+            "day" : 0,
+            "time" : "1200"
+          },
+          "open" : {
+            "day" : 0,
+            "time" : "1000"
+          }
+        },
+        {
+          "close" : {
+            "day" : 0,
+            "time" : "1900"
+          },
+          "open" : {
+            "day" : 0,
+            "time" : "1600"
+          }
+        },
+        {
+          "close" : {
+            "day" : 1,
+            "time" : "1200"
+          },
+          "open" : {
+            "day" : 1,
+            "time" : "1000"
+          }
+        },
+        {
+          "close" : {
+            "day" : 1,
+            "time" : "1900"
+          },
+          "open" : {
+            "day" : 1,
+            "time" : "1600"
+          }
+        },
+        {
+          "close" : {
+            "day" : 2,
+            "time" : "1200"
+          },
+          "open" : {
+            "day" : 2,
+            "time" : "1000"
+          }
+        },
+        {
+          "close" : {
+            "day" : 2,
+            "time" : "1900"
+          },
+          "open" : {
+            "day" : 2,
+            "time" : "1600"
+          }
+        },
+        {
+          "close" : {
+            "day" : 3,
+            "time" : "1200"
+          },
+          "open" : {
+            "day" : 3,
+            "time" : "1000"
+          }
+        },
+        {
+          "close" : {
+            "day" : 3,
+            "time" : "1900"
+          },
+          "open" : {
+            "day" : 3,
+            "time" : "1600"
+          }
+        },
+        {
+          "close" : {
+            "day" : 4,
+            "time" : "1200"
+          },
+          "open" : {
+            "day" : 4,
+            "time" : "1000"
+          }
+        },
+        {
+          "close" : {
+            "day" : 4,
+            "time" : "1900"
+          },
+          "open" : {
+            "day" : 4,
+            "time" : "1600"
+          }
+        },
+        {
+          "close" : {
+            "day" : 5,
+            "time" : "1200"
+          },
+          "open" : {
+            "day" : 5,
+            "time" : "1000"
+          }
+        },
+        {
+          "close" : {
+            "day" : 5,
+            "time" : "1900"
+          },
+          "open" : {
+            "day" : 5,
+            "time" : "1600"
+          }
+        },
+        {
+          "close" : {
+            "day" : 6,
+            "time" : "1200"
+          },
+          "open" : {
+            "day" : 6,
+            "time" : "1000"
+          }
+        },
+        {
+          "close" : {
+            "day" : 6,
+            "time" : "1900"
+          },
+          "open" : {
+            "day" : 6,
+            "time" : "1600"
+          }
+        }
+      ],
+      "weekday_text" : [
+        "Monday: 10:00 AM – 12:00 PM, 4:00 – 7:00 PM",
+        "Tuesday: 10:00 AM – 12:00 PM, 4:00 – 7:00 PM",
+        "Wednesday: 10:00 AM – 12:00 PM, 4:00 – 7:00 PM",
+        "Thursday: 10:00 AM – 12:00 PM, 4:00 – 7:00 PM",
+        "Friday: 10:00 AM – 12:00 PM, 4:00 – 7:00 PM",
+        "Saturday: 10:00 AM – 12:00 PM, 4:00 – 7:00 PM",
+        "Sunday: 10:00 AM – 12:00 PM, 4:00 – 7:00 PM"
+      ]
+    },
+    "place_id" : "ChIJOQNjPn4eIDoRQ2Mh9UX6wsU",
+    "reference" : "CnRhAAAAFYxY-VrZOcoBe-V4aqU9JXLnN1jyHbrsLS9UPT6BfLn-CtGTN19SDc8uRr0DF0CmXeUIh4E8YsO7-e8JzWZCln1oXKGIdo85KQuDIe85MTZ5vXqxUjFrRdpfoghtSuDW4SnyJxd8ZXSLJQSjr7O_qxIQzDnVFjmUS8Zq61kY1g_KChoUwiylNlE9l8Fwmz4Og9PxAQLiOKg",
+    "scope" : "GOOGLE",
+    "types" : [ "hospital", "point_of_interest", "establishment" ],
+    "url" : "https://maps.google.com/?cid=14250227349325964099",
+    "utc_offset" : 330,
+    "vicinity" : "National Institute of Technology, Sector 1, Rourkela",
+    "website" : "http://oac.nitrkl.ac.in/healthcentre/"
+  },
+  "status" : "OK"
+}
