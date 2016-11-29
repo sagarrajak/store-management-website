@@ -6,8 +6,9 @@ var   mongoose = module.exports('mongoose');
 var retailer =  mongoose.Schema({
 
     name : { type : String , require: true },
-    phone_num : {type : Number , require : true },
-    mail :  {type : Number , require : true }
+    phone_num : { type : Number , require : true },
+    mail :  { type : Number , require : true },
+    adress : { type : String  }
 
 });
 

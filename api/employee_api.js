@@ -4,14 +4,9 @@
 
 var     mongoose  =  require('mongoose');
 var     employee = require('../schemas/employee');
-
-
 module.exports = function(app,express){
-
     var api = express.Router();
-
     api.post('/add-employee' , function(req,res){
-
         var   emp  = new employee({
             name          :  req.body.name,
             age           :  req.body.age,
@@ -20,14 +15,12 @@ module.exports = function(app,express){
             mail          :  req.body.mail,
             phone_number  :  req.body.phoneNumber
         });
-
         emp.save(function(err){
             if(err)
                 res.send(err);
             else
                 res.json({message:'new employee is added'});
         })
-
     });
     api.get('/list-employee', function( req , res ){
 
@@ -39,7 +32,6 @@ module.exports = function(app,express){
                res.send(emp);
 
         })
-
     });
     api.get('/delete-employee',function(req , res){
         employee.find({_id : req.query['id'] }).remove().exec(function(err,scucess){
@@ -68,8 +60,6 @@ module.exports = function(app,express){
                      res.send('Query excicuted sucesfully!!');
                 }
         )
-
     });
-
     return api;
 }

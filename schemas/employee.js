@@ -1,13 +1,22 @@
-var mongoose = require('mongoose');
-var Employee   =   new mongoose.Schema({
+var mongoose   =   require('mongoose');
+var work_profile = require('work_profile');
 
-    name : {           type:String , required:true},
-    age : {            type:Number , required:true},
-    date_of_birth : {  type:Date , required:true},
-    date_of_join : {   type:Date , required:true},
-    mail : {          type : String , required:true },
-    phone_number : {   type:Number , required:true }
+var employee   =   new mongoose.Schema({
+
+    name           : {  type :String },
+    age            : {  type :Number },
+    date_of_birth  : {  type :Date },
+    date_of_join   : {  type :Date , default : Date.now },
+    mail           : {  type : String , required:true },
+    pane_num       : {  type :string  },
+    phone_number   : {  type : Number , required:true },
+    work_profile   : {  type : work_profile.schema , require:true }
 
 });
 
-module.exports =  mongoose.model( 'employee' , Employee );
+module.exports = {
+
+   schema : employee ,
+   model  : mongoose.model('employee' , employee )
+
+};
