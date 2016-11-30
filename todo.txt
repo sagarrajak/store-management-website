@@ -2,4 +2,7 @@ working in product type api
 date : 30dec2016
     working on schema,completed schema and ER digram for product and stock
     working on api now
+date : 1dec2016
+    start working on api of products and employee
+
 
