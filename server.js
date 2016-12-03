@@ -15,23 +15,22 @@ mongoose.connect(config.database, function(err){
   console.log('connected to database');
 });
 
-app.use(bodyParser.urlencoded({extendex:true}));
+app.use(bodyParser.urlencoded({extended:true}));
 app.use(bodyParser.json());
 app.use(morgen('dev'));
-
-app.use('/app', expree.static(__dirname));
+app.use('/app' ,  expree.static(__dirname) );
 
 //var api = require('./routes/signup')(app,expree);
 //app.use( '/api' , api );
 
 
 var api = require(  './api/employee_api' )(app,expree);
-app.use( '/api' , api );
+app.use('/api',api);
 
 
-app.get('*',function(req,res){
-       res.sendFile(__dirname+'/template/index.html');
-});
+//app.get('*',function(req,res){
+//       res.sendFile(__dirname+'/template/index.html');
+//});
 
 app.listen( config.port , function(err){
    if(err){console.log(err);}

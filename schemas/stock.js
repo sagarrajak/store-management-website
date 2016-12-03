@@ -16,9 +16,5 @@ var stock = mongoose.Schema({
 
 });
 
-module.exports =  {
+module.exports = mongoose.model('stock' , stock );
 
-  schema : stock ,
-  modal :  mongoose.modal('stock' , stock )
-
-};

@@ -13,12 +13,11 @@ var    product       =   mongoose.Schema({
    price    :  {   type  : Number , require :true }
 
 });
-module.exports = {
 
-     model  : mongoose.model( 'product' ,  product),
-     schema : product
+module.exports = mongoose.model( 'product' ,  product );
 
-};
+
+
 
 
 

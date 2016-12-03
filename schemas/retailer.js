@@ -11,11 +11,8 @@ var retailer =  mongoose.Schema({
     adress : { type : String  }
 
 });
+module.exports = Mongoose.model( 'retailer' ,  retailer );
 
-module.exports = {
-     schema : retailer ,
-     model  : Mongoose.model( 'retailer' ,  retailer )
-};
 
 
 
