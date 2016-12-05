@@ -8,12 +8,14 @@ var config = require('./config');
 var mongoose = require('mongoose');
 var app = expree();
 
+
 mongoose.connect(config.database, function(err){
  if(err)
   console.log('error');
  else
   console.log('connected to database');
 });
+
 
 app.use(bodyParser.urlencoded({extended:true}));
 app.use(bodyParser.json());
@@ -23,14 +25,13 @@ app.use('/app' ,  expree.static(__dirname) );
 //var api = require('./routes/signup')(app,expree);
 //app.use( '/api' , api );
 
-
-var api = require(  './api/employee_api' )(app,expree);
+var api = require( './api/employee_api' )(app,expree);
 app.use('/api',api);
+app.use('/app' , express.static(__dirname));
 
-
-//app.get('*',function(req,res){
-//       res.sendFile(__dirname+'/template/index.html');
-//});
+app.get('*',function(req,res){
+       res.sendFile( __dirname + '/frontend/templates/index.html' );
+});
 
 app.listen( config.port , function(err){
    if(err){console.log(err);}

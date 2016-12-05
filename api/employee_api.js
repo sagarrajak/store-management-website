@@ -10,6 +10,43 @@ module.exports = function(app,express){
 
     var api = express.Router();
 
+    api.use('/:id' , function( req, res , next ){
+
+      //todo:3 dec 2016 validater fucntion for employee
+
+       var id = req.params.id;
+
+       if(id=='add-employee'){
+
+           next();
+       }
+       else if(id=='list-employee'){
+
+
+           next();
+       }
+       else if(id=='delete-employee'){
+
+
+           next();
+       }
+       else if(id=='edit-employee'){
+
+
+           next();
+       }
+       else if(id=='clear-employee'){
+
+
+           next();
+       }
+       else  res.status(404).send("not found!");
+
+
+
+    });
+
+
     api.post( '/add-employee' , function( req , res ){
 
 
@@ -17,8 +54,8 @@ module.exports = function(app,express){
 
             name          :  req.body.name,
             age           :  req.body.ageNum,
-            date_of_birth :  new Date(req.body.birthYear , req.body.birthMonth , req.body.birthDate ),
-            date_of_join  :  new Date(req.body.joinYear,req.body.joinMonth,req.body.joinDate),
+            date_of_birth :  new Date( req.body.birthYear , req.body.birthMonth , req.body.birthDate ),
+            date_of_join  :  new Date( req.body.joinYear,req.body.joinMonth,req.body.joinDate),
             mail          :  req.body.mail,
             pan_num       :  req.body.panNum,
             phone_number  :  req.body.phoneNum,
@@ -30,7 +67,7 @@ module.exports = function(app,express){
         emp.save(function(err){
 
             if(err)
-                res.send(err);
+                res.status(400).send(err);
             else
                 res.json({message:'new employee is added'});
 
@@ -40,12 +77,12 @@ module.exports = function(app,express){
     });
 
 
-    api.get('/list-employee', function( req , res ){
+    api.get( '/list-employee' ,  function( req , res ){
 
         employee.find({}).exec(function(err,emp){
 
             if(err)
-               res.send(err);
+               res.status(400).send(err);
             else
                res.json(emp);
 
@@ -54,14 +91,14 @@ module.exports = function(app,express){
     });
 
 
-    api.get('/delete-employee',function(req , res){
+    api.get( '/delete-employee' , function(req , res){
 
         employee.find({_id : req.query['id'] }).remove().exec(function(err){
 
             if(err)
-                res.send(err);
+                res.status(400).send(err);
             else
-                res.json({message:'date removed successfully!!'});
+                res.status(200).json({message:'date removed successfully!!'});
 
         });
 
@@ -69,28 +106,28 @@ module.exports = function(app,express){
 
 
     api.post( '/edit-employee' , function(req,res) {
-            employee.findOneAndUpdate( { _id : req.body.id } ,
+            employee.findByIdAndUpdate( req.body.id  ,
                 {
                     $set :{
 
-                        name          :  req.body.name,
-                        age           :  req.body.ageNum ,
-                        date_of_birth :  new Date(req.body.birthYear , req.body.birthMonth , req.body.birthDate ),
-                        date_of_join  :  new Date(req.body.joinYear , req.body.joinMonth , req.body.joinDate),
-                        mail          :  req.body.mail,
-                        pan_num       :  req.body.panNum,
-                        phone_number  :  req.body.phoneNum,
-                        work_profile  :  req.body.profile
+                            name          :  req.body.name,
+                            age           :  req.body.ageNum ,
+                            date_of_birth :  new Date(  req.body.birthYear , req.body.birthMonth , req.body.birthDate ),
+                            date_of_join  :  new Date(  req.body.joinYear  , req.body.joinMonth  , req.body.joinDate ),
+                            mail          :  req.body.mail,
+                            pan_num       :  req.body.panNum,
+                            phone_number  :  req.body.phoneNum,
+                            work_profile  :  req.body.profile
 
-                    }
+                         }
                 }
                 ,
 
                 function(err){
                    if(err)
-                      res.send(err);
+                      res.status(400).send(err);
                    else
-                      res.json({message :'Query executed successfully!!'});
+                      res.status(200).json({message :'Query executed successfully!!'});
                 }
 
         )
@@ -104,9 +141,9 @@ module.exports = function(app,express){
            .remove()
                 .exec( function(err){
             if(err)
-                res.send(err);
+                res.status(400).send(err);
             else
-                res.send({message:"data cleared successfully"});
+                res.status(200).json({message:"data cleared successfully"});
        });
 
     });

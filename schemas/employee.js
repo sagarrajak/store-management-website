@@ -1,6 +1,7 @@
 var mongoose   =   require('mongoose');
 var work_profile = require('./work_profile')
 //Schema = Mongoose.Schema;
+var ObjectId = mongoose.Schema.Types.ObjectId;
 
 var employee   =   new mongoose.Schema(  {
 
@@ -10,8 +11,8 @@ var employee   =   new mongoose.Schema(  {
     date_of_join   : {  type : Date ,   default : Date.now },
     mail           : {  type : String , required:true },
     pan_num        : {  type : String  },
-    phone_number   : [{type : Number , required:true }],
-    work_profile   : {  type : mongoose.Schema.Types.ObjectId , ref : 'work_profile' }
+    phone_number   : [ { type : Number , required:true }],
+    work_profile   : {  type : ObjectId , ref : 'work_profile' }
 
 });
 

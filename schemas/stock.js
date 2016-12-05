@@ -11,8 +11,8 @@ var stock = mongoose.Schema({
     quantity    :  {  type  : Number  , require : true   },
     seller      :  {  type  : retailer.Schema , require: true },
     product     :  {  type  : product.schema , require :true  },
-    buyed_price :  {  type : Number , require : true },
-    exp_date    :  {  type:Date , require : true }
+    buyed_price :  {  type  : Number , require : true },
+    exp_date    :  {  type  : Date , require : true }
 
 });
 

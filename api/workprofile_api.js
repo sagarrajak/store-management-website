@@ -4,23 +4,80 @@
 var mongoose = require('mongoose');
 var work_profile = require('../schema/work_profile');
 module.exports = function(app,express){
-    var api = express.Router();
-    api.post('/add-work-profile',function(req , res ){
 
+    var api = express.Router();
+
+    api.use('/:id', function(req,res,next){
+
+        if(id=='create-work-profile'){
+
+
+            next();
+        }
+        else if(id=='delete-work-profile'){
+
+
+            next();
+        }
+        else if(id=='modify-work-profile'){
+
+
+            next();
+        }
+        else if(id=='list-work-profile'){
+
+            next()
+        }
+        else
+            res.status(404).send("not found!");
+    });
+
+    api.post('/create-work-profile',function(req , res){
+
+         new work_profile({
+             name       :    req.body.name  ,
+             hr_of_work :    req.body.hr_of_work  ,
+             salary_up  :    req.body.salary_up  ,
+             salary_low :    req.body.salary_down ,
+             right      :     req.body.right
+         })
+         .save(function(err){
+               if(err)
+                  res.staus(400).send(err);
+               else
+                  res.send(400).json({message:"crated successfully"});
+         });
 
     });
+
     api.get('/delete-work-profile', function(req,res){
 
+        work_profile.find({}).exec(function(err,emp){
+
+            if(err)
+                res.status(400).send(err);
+            else
+                res.json(emp);
+
+        });
 
     });
+
     api.get('/modify-work-profile', function(req,res){
 
 
+
+
+
     });
+
     api.get('/list-work-profile',function(req,res){
 
 
+
+
     });
+
     return api;
 }
 
