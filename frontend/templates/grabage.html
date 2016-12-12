@@ -1,0 +1,537 @@
+<md-content  layout="column" flex="100">
+    <md-tabs md-dynamic-height md-border-bottom>
+        <md-tab label="employee">
+            <md-content>
+                <md-grid-list
+                        md-cols-xs="1" md-cols-sm="2" md-cols-md="3" md-cols-gt-md="4"
+                        md-row-height="2:1"
+                        md-gutter="20px" md-gutter-gt-sm="8px" flex>
+
+                    <div ng-repeat="emp in fuckof123" >
+                        <md-grid-tile md-rowspan="1" md-colspan="1" md-ink-ripple="black">
+                            <div class="sag-container" flex="100">
+                                <div layout="column" flex="80" class="color-black" style="height: 100%">
+                                    <div layout="row">
+                                        <div class="sag-title">{{emp.name}}</div>
+                                    </div>
+                                    <div layout="row">
+                                        <div class="sag-title sag-subtitle">{{emp.email}}</div>
+                                    </div>
+                                </div>
+                                <div layout="column" flex="20" class="color-yellow" style="height: 100%">
+                                    <md-menu md-offset="0-7">
+                                        <md-button class="md-fab md-mini md-raised"
+                                                   ng-click="$mdOpenMenu($event)">
+                                            <md-icon md-menu-origin><i class="material-icons"
+                                                                       style="color: black">format_list_bulleted</i>
+                                            </md-icon>
+                                        </md-button>
+                                        <md-menu-content width="2">
+                                            <md-menu-item>
+                                                <md-button><span class="md-menu-align-target">Option</span>
+                                                </md-button>
+                                            </md-menu-item>
+                                            <md-menu-item>
+                                                <md-button><span class="md-menu-align-target">Option</span>
+                                                </md-button>
+                                            </md-menu-item>
+                                            <md-menu-item>
+                                                <md-button><span class="md-menu-align-target">Option</span>
+                                                </md-button>
+                                            </md-menu-item>
+                                        </md-menu-content>
+                                    </md-menu>
+                                </div>
+                            </div>
+                        </md-grid-tile>
+                    </div>
+
+                </md-grid-list>
+            </md-content>
+        </md-tab>
+        <md-tab label="Admin">
+            <md-content>
+                <md-grid-list
+                        md-cols-xs="1" md-cols-sm="2" md-cols-md="3" md-cols-gt-md="3"
+                        md-row-height-gt-md="1.7:1" md-row-height="2:2"
+                        md-gutter="20px" md-gutter-gt-sm="8px">
+
+                    <md-grid-tile md-rowspan="1" md-colspan="1">
+                        <div class="sag-container">
+                            <div layout="column" flex="80" class="color-black" style="height: 100%">
+                                <div layout="row">
+                                    <div class="sag-title">sumit Kumar</div>
+                                </div>
+                                <div layout="row">
+                                    <div class="sag-title sag-subtitle"> sagarrajak858@gmail.com</div>
+                                </div>
+                            </div>
+                            <div layout="column" flex="20" class="color-yellow" style="height: 100%">
+                                <md-button class="md-fab md-mini">
+                                    <md-icon><i class="material-icons">format_list_bulleted</i></md-icon>
+                                </md-button>
+                                <md-button class="md-fab md-mini">
+                                    <md-icon><i class="material-icons">format_list_bulleted</i></md-icon>
+                                </md-button>
+                                <md-button class="md-fab md-mini">
+                                    <md-icon><i class="material-icons">format_list_bulleted</i></md-icon>
+                                </md-button>
+                                <md-button class="md-fab md-mini">
+                                    <md-icon><i class="material-icons">format_list_bulleted</i></md-icon>
+                                </md-button>
+                            </div>
+
+
+                        </div>
+
+                    </md-grid-tile>
+                    <md-grid-tile md-rowspan="1" md-colspan="1">
+                        <div class="sag-container">
+                            <div layout="column" flex="80" class="color-black" style="height: 100%">
+                                <div layout="row">
+                                    <div class="sag-title">sumit Kumar</div>
+                                </div>
+                                <div layout="row">
+                                    <div class="sag-title sag-subtitle"> sagarrajak858@gmail.com</div>
+                                </div>
+                            </div>
+                            <div layout="column" flex="20" class="color-yellow" style="height: 100%">
+                                <md-button class="md-fab md-mini">
+                                    <md-icon><i class="material-icons">format_list_bulleted</i></md-icon>
+                                </md-button>
+                                <md-button class="md-fab md-mini">
+                                    <md-icon><i class="material-icons">format_list_bulleted</i></md-icon>
+                                </md-button>
+                                <md-button class="md-fab md-mini">
+                                    <md-icon><i class="material-icons">format_list_bulleted</i></md-icon>
+                                </md-button>
+                                <md-button class="md-fab md-mini">
+                                    <md-icon><i class="material-icons">format_list_bulleted</i></md-icon>
+                                </md-button>
+                            </div>
+
+
+                        </div>
+
+                    </md-grid-tile>
+                    <md-grid-tile md-rowspan="1" md-colspan="1">
+                        <div class="sag-container">
+                            <div layout="column" flex="80" class="color-black" style="height: 100%">
+                                <div layout="row">
+                                    <div class="sag-title">sumit Kumar</div>
+                                </div>
+                                <div layout="row">
+                                    <div class="sag-title sag-subtitle"> sagarrajak858@gmail.com</div>
+                                </div>
+                            </div>
+                            <div layout="column" flex="20" class="color-yellow" style="height: 100%">
+                                <md-button class="md-fab md-mini">
+                                    <md-icon><i class="material-icons">format_list_bulleted</i></md-icon>
+                                </md-button>
+                                <md-button class="md-fab md-mini">
+                                    <md-icon><i class="material-icons">format_list_bulleted</i></md-icon>
+                                </md-button>
+                                <md-button class="md-fab md-mini">
+                                    <md-icon><i class="material-icons">format_list_bulleted</i></md-icon>
+                                </md-button>
+                                <md-button class="md-fab md-mini">
+                                    <md-icon><i class="material-icons">format_list_bulleted</i></md-icon>
+                                </md-button>
+                            </div>
+
+
+                        </div>
+
+                    </md-grid-tile>
+                    <md-grid-tile md-rowspan="1" md-colspan="1">
+                        <div class="sag-container">
+                            <div layout="column" flex="80" class="color-black" style="height: 100%">
+                                <div layout="row">
+                                    <div class="sag-title">sumit Kumar</div>
+                                </div>
+                                <div layout="row">
+                                    <div class="sag-title sag-subtitle"> sagarrajak858@gmail.com</div>
+                                </div>
+                            </div>
+                            <div layout="column" flex="20" class="color-yellow" style="height: 100%">
+                                <md-button class="md-fab md-mini">
+                                    <md-icon><i class="material-icons">format_list_bulleted</i></md-icon>
+                                </md-button>
+                                <md-button class="md-fab md-mini">
+                                    <md-icon><i class="material-icons">format_list_bulleted</i></md-icon>
+                                </md-button>
+                                <md-button class="md-fab md-mini">
+                                    <md-icon><i class="material-icons">format_list_bulleted</i></md-icon>
+                                </md-button>
+                                <md-button class="md-fab md-mini">
+                                    <md-icon><i class="material-icons">format_list_bulleted</i></md-icon>
+                                </md-button>
+                            </div>
+
+
+                        </div>
+
+                    </md-grid-tile>
+                    <md-grid-tile md-rowspan="1" md-colspan="1">
+                        <div class="sag-container">
+                            <div layout="column" flex="80" class="color-black" style="height: 100%">
+                                <div layout="row">
+                                    <div class="sag-title">sumit Kumar</div>
+                                </div>
+                                <div layout="row">
+                                    <div class="sag-title sag-subtitle"> sagarrajak858@gmail.com</div>
+                                </div>
+                            </div>
+                            <div layout="column" flex="20" class="color-yellow" style="height: 100%">
+                                <md-button class="md-fab md-mini">
+                                    <md-icon><i class="material-icons">format_list_bulleted</i></md-icon>
+                                </md-button>
+                                <md-button class="md-fab md-mini">
+                                    <md-icon><i class="material-icons">format_list_bulleted</i></md-icon>
+                                </md-button>
+                                <md-button class="md-fab md-mini">
+                                    <md-icon><i class="material-icons">format_list_bulleted</i></md-icon>
+                                </md-button>
+                                <md-button class="md-fab md-mini">
+                                    <md-icon><i class="material-icons">format_list_bulleted</i></md-icon>
+                                </md-button>
+                            </div>
+
+
+                        </div>
+
+                    </md-grid-tile>
+                    <md-grid-tile md-rowspan="1" md-colspan="1">
+                        <div class="sag-container">
+                            <div layout="column" flex="80" class="color-black" style="height: 100%">
+                                <div layout="row">
+                                    <div class="sag-title">sumit Kumar</div>
+                                </div>
+                                <div layout="row">
+                                    <div class="sag-title sag-subtitle"> sagarrajak858@gmail.com</div>
+                                </div>
+                            </div>
+                            <div layout="column" flex="20" class="color-yellow" style="height: 100%">
+                                <md-button class="md-fab md-mini">
+                                    <md-icon><i class="material-icons">format_list_bulleted</i></md-icon>
+                                </md-button>
+                                <md-button class="md-fab md-mini">
+                                    <md-icon><i class="material-icons">format_list_bulleted</i></md-icon>
+                                </md-button>
+                                <md-button class="md-fab md-mini">
+                                    <md-icon><i class="material-icons">format_list_bulleted</i></md-icon>
+                                </md-button>
+                                <md-button class="md-fab md-mini">
+                                    <md-icon><i class="material-icons">format_list_bulleted</i></md-icon>
+                                </md-button>
+                            </div>
+
+
+                        </div>
+
+                    </md-grid-tile>
+                    <md-grid-tile md-rowspan="1" md-colspan="1">
+                        <div class="sag-container">
+                            <div layout="column" flex="80" class="color-black" style="height: 100%">
+                                <div layout="row">
+                                    <div class="sag-title">sumit Kumar</div>
+                                </div>
+                                <div layout="row">
+                                    <div class="sag-title sag-subtitle"> sagarrajak858@gmail.com</div>
+                                </div>
+                            </div>
+                            <div layout="column" flex="20" class="color-yellow" style="height: 100%">
+                                <md-button class="md-fab md-mini">
+                                    <md-icon><i class="material-icons">format_list_bulleted</i></md-icon>
+                                </md-button>
+                                <md-button class="md-fab md-mini">
+                                    <md-icon><i class="material-icons">format_list_bulleted</i></md-icon>
+                                </md-button>
+                                <md-button class="md-fab md-mini">
+                                    <md-icon><i class="material-icons">format_list_bulleted</i></md-icon>
+                                </md-button>
+                                <md-button class="md-fab md-mini">
+                                    <md-icon><i class="material-icons">format_list_bulleted</i></md-icon>
+                                </md-button>
+                            </div>
+
+
+                        </div>
+
+                    </md-grid-tile>
+                    <md-grid-tile md-rowspan="1" md-colspan="1">
+                        <div class="sag-container">
+                            <div layout="column" flex="80" class="color-black" style="height: 100%">
+                                <div layout="row">
+                                    <div class="sag-title">sumit Kumar</div>
+                                </div>
+                                <div layout="row">
+                                    <div class="sag-title sag-subtitle"> sagarrajak858@gmail.com</div>
+                                </div>
+                            </div>
+                            <div layout="column" flex="20" class="color-yellow" style="height: 100%">
+                                <md-button class="md-fab md-mini">
+                                    <md-icon><i class="material-icons">format_list_bulleted</i></md-icon>
+                                </md-button>
+                                <md-button class="md-fab md-mini">
+                                    <md-icon><i class="material-icons">format_list_bulleted</i></md-icon>
+                                </md-button>
+                                <md-button class="md-fab md-mini">
+                                    <md-icon><i class="material-icons">format_list_bulleted</i></md-icon>
+                                </md-button>
+                                <md-button class="md-fab md-mini">
+                                    <md-icon><i class="material-icons">format_list_bulleted</i></md-icon>
+                                </md-button>
+                            </div>
+
+
+                        </div>
+
+                    </md-grid-tile>
+                </md-grid-list>
+            </md-content>
+        </md-tab>
+        <md-tab label="Retailer">
+            <md-content>
+                <md-grid-list
+                        md-cols-xs="1" md-cols-sm="2" md-cols-md="3" md-cols-gt-md="3"
+                        md-row-height-gt-md="1.7:1" md-row-height="2:2"
+                        md-gutter="20px" md-gutter-gt-sm="8px">
+
+                    <md-grid-tile md-rowspan="1" md-colspan="1">
+                        <div class="sag-container">
+                            <div layout="column" flex="80" class="color-black" style="height: 100%">
+                                <div layout="row">
+                                    <div class="sag-title">sumit Kumar</div>
+                                </div>
+                                <div layout="row">
+                                    <div class="sag-title sag-subtitle"> sagarrajak858@gmail.com</div>
+                                </div>
+                            </div>
+                            <div layout="column" flex="20" class="color-yellow" style="height: 100%">
+                                <md-button class="md-fab md-mini">
+                                    <md-icon><i class="material-icons">format_list_bulleted</i></md-icon>
+                                </md-button>
+                                <md-button class="md-fab md-mini">
+                                    <md-icon><i class="material-icons">format_list_bulleted</i></md-icon>
+                                </md-button>
+                                <md-button class="md-fab md-mini">
+                                    <md-icon><i class="material-icons">format_list_bulleted</i></md-icon>
+                                </md-button>
+                                <md-button class="md-fab md-mini">
+                                    <md-icon><i class="material-icons">format_list_bulleted</i></md-icon>
+                                </md-button>
+                            </div>
+
+
+                        </div>
+
+                    </md-grid-tile>
+                    <md-grid-tile md-rowspan="1" md-colspan="1">
+                        <div class="sag-container">
+                            <div layout="column" flex="80" class="color-black" style="height: 100%">
+                                <div layout="row">
+                                    <div class="sag-title">sumit Kumar</div>
+                                </div>
+                                <div layout="row">
+                                    <div class="sag-title sag-subtitle"> sagarrajak858@gmail.com</div>
+                                </div>
+                            </div>
+                            <div layout="column" flex="20" class="color-yellow" style="height: 100%">
+                                <md-button class="md-fab md-mini">
+                                    <md-icon><i class="material-icons">format_list_bulleted</i></md-icon>
+                                </md-button>
+                                <md-button class="md-fab md-mini">
+                                    <md-icon><i class="material-icons">format_list_bulleted</i></md-icon>
+                                </md-button>
+                                <md-button class="md-fab md-mini">
+                                    <md-icon><i class="material-icons">format_list_bulleted</i></md-icon>
+                                </md-button>
+                                <md-button class="md-fab md-mini">
+                                    <md-icon><i class="material-icons">format_list_bulleted</i></md-icon>
+                                </md-button>
+                            </div>
+
+
+                        </div>
+
+                    </md-grid-tile>
+                    <md-grid-tile md-rowspan="1" md-colspan="1">
+                        <div class="sag-container">
+                            <div layout="column" flex="80" class="color-black" style="height: 100%">
+                                <div layout="row">
+                                    <div class="sag-title">sumit Kumar</div>
+                                </div>
+                                <div layout="row">
+                                    <div class="sag-title sag-subtitle"> sagarrajak858@gmail.com</div>
+                                </div>
+                            </div>
+                            <div layout="column" flex="20" class="color-yellow" style="height: 100%">
+                                <md-button class="md-fab md-mini">
+                                    <md-icon><i class="material-icons">format_list_bulleted</i></md-icon>
+                                </md-button>
+                                <md-button class="md-fab md-mini">
+                                    <md-icon><i class="material-icons">format_list_bulleted</i></md-icon>
+                                </md-button>
+                                <md-button class="md-fab md-mini">
+                                    <md-icon><i class="material-icons">format_list_bulleted</i></md-icon>
+                                </md-button>
+                                <md-button class="md-fab md-mini">
+                                    <md-icon><i class="material-icons">format_list_bulleted</i></md-icon>
+                                </md-button>
+                            </div>
+
+
+                        </div>
+
+                    </md-grid-tile>
+                    <md-grid-tile md-rowspan="1" md-colspan="1">
+                        <div class="sag-container">
+                            <div layout="column" flex="80" class="color-black" style="height: 100%">
+                                <div layout="row">
+                                    <div class="sag-title">sumit Kumar</div>
+                                </div>
+                                <div layout="row">
+                                    <div class="sag-title sag-subtitle"> sagarrajak858@gmail.com</div>
+                                </div>
+                            </div>
+                            <div layout="column" flex="20" class="color-yellow" style="height: 100%">
+                                <md-button class="md-fab md-mini">
+                                    <md-icon><i class="material-icons">format_list_bulleted</i></md-icon>
+                                </md-button>
+                                <md-button class="md-fab md-mini">
+                                    <md-icon><i class="material-icons">format_list_bulleted</i></md-icon>
+                                </md-button>
+                                <md-button class="md-fab md-mini">
+                                    <md-icon><i class="material-icons">format_list_bulleted</i></md-icon>
+                                </md-button>
+                                <md-button class="md-fab md-mini">
+                                    <md-icon><i class="material-icons">format_list_bulleted</i></md-icon>
+                                </md-button>
+                            </div>
+
+
+                        </div>
+
+                    </md-grid-tile>
+                    <md-grid-tile md-rowspan="1" md-colspan="1">
+                        <div class="sag-container">
+                            <div layout="column" flex="80" class="color-black" style="height: 100%">
+                                <div layout="row">
+                                    <div class="sag-title">sumit Kumar</div>
+                                </div>
+                                <div layout="row">
+                                    <div class="sag-title sag-subtitle"> sagarrajak858@gmail.com</div>
+                                </div>
+                            </div>
+                            <div layout="column" flex="20" class="color-yellow" style="height: 100%">
+                                <md-button class="md-fab md-mini">
+                                    <md-icon><i class="material-icons">format_list_bulleted</i></md-icon>
+                                </md-button>
+                                <md-button class="md-fab md-mini">
+                                    <md-icon><i class="material-icons">format_list_bulleted</i></md-icon>
+                                </md-button>
+                                <md-button class="md-fab md-mini">
+                                    <md-icon><i class="material-icons">format_list_bulleted</i></md-icon>
+                                </md-button>
+                                <md-button class="md-fab md-mini">
+                                    <md-icon><i class="material-icons">format_list_bulleted</i></md-icon>
+                                </md-button>
+                            </div>
+
+
+                        </div>
+
+                    </md-grid-tile>
+                    <md-grid-tile md-rowspan="1" md-colspan="1">
+                        <div class="sag-container">
+                            <div layout="column" flex="80" class="color-black" style="height: 100%">
+                                <div layout="row">
+                                    <div class="sag-title">sumit Kumar</div>
+                                </div>
+                                <div layout="row">
+                                    <div class="sag-title sag-subtitle"> sagarrajak858@gmail.com</div>
+                                </div>
+                            </div>
+                            <div layout="column" flex="20" class="color-yellow" style="height: 100%">
+                                <md-button class="md-fab md-mini">
+                                    <md-icon><i class="material-icons">format_list_bulleted</i></md-icon>
+                                </md-button>
+                                <md-button class="md-fab md-mini">
+                                    <md-icon><i class="material-icons">format_list_bulleted</i></md-icon>
+                                </md-button>
+                                <md-button class="md-fab md-mini">
+                                    <md-icon><i class="material-icons">format_list_bulleted</i></md-icon>
+                                </md-button>
+                                <md-button class="md-fab md-mini">
+                                    <md-icon><i class="material-icons">format_list_bulleted</i></md-icon>
+                                </md-button>
+                            </div>
+
+
+                        </div>
+
+                    </md-grid-tile>
+                    <md-grid-tile md-rowspan="1" md-colspan="1">
+                        <div class="sag-container">
+                            <div layout="column" flex="80" class="color-black" style="height: 100%">
+                                <div layout="row">
+                                    <div class="sag-title">sumit Kumar</div>
+                                </div>
+                                <div layout="row">
+                                    <div class="sag-title sag-subtitle"> sagarrajak858@gmail.com</div>
+                                </div>
+                            </div>
+                            <div layout="column" flex="20" class="color-yellow" style="height: 100%">
+                                <md-button class="md-fab md-mini">
+                                    <md-icon><i class="material-icons">format_list_bulleted</i></md-icon>
+                                </md-button>
+                                <md-button class="md-fab md-mini">
+                                    <md-icon><i class="material-icons">format_list_bulleted</i></md-icon>
+                                </md-button>
+                                <md-button class="md-fab md-mini">
+                                    <md-icon><i class="material-icons">format_list_bulleted</i></md-icon>
+                                </md-button>
+                                <md-button class="md-fab md-mini">
+                                    <md-icon><i class="material-icons">format_list_bulleted</i></md-icon>
+                                </md-button>
+                            </div>
+
+
+                        </div>
+
+                    </md-grid-tile>
+                    <md-grid-tile md-rowspan="1" md-colspan="1">
+                        <div class="sag-container">
+                            <div layout="column" flex="80" class="color-black" style="height: 100%">
+                                <div layout="row">
+                                    <div class="sag-title">sumit Kumar</div>
+                                </div>
+                                <div layout="row">
+                                    <div class="sag-title sag-subtitle"> sagarrajak858@gmail.com</div>
+                                </div>
+                            </div>
+                            <div layout="column" flex="20" class="color-yellow" style="height: 100%">
+                                <md-button class="md-fab md-mini">
+                                    <md-icon><i class="material-icons">format_list_bulleted</i></md-icon>
+                                </md-button>
+                                <md-button class="md-fab md-mini">
+                                    <md-icon><i class="material-icons">format_list_bulleted</i></md-icon>
+                                </md-button>
+                                <md-button class="md-fab md-mini">
+                                    <md-icon><i class="material-icons">format_list_bulleted</i></md-icon>
+                                </md-button>
+                                <md-button class="md-fab md-mini">
+                                    <md-icon><i class="material-icons">format_list_bulleted</i></md-icon>
+                                </md-button>
+                            </div>
+
+
+                        </div>
+
+                    </md-grid-tile>
+                </md-grid-list>
+            </md-content>
+        </md-tab>
+    </md-tabs>
+</md-content>
