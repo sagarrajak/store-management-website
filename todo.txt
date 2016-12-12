@@ -4,5 +4,11 @@ date : 30dec2016
     working on api now
 date : 1dec2016
     start working on api of products and employee
+date : 12 dec2016
+    milestone 1
+            used angular-material
+            used ui-router
+            success fully fetched data from backend
+
 
 

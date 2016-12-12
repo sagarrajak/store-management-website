@@ -1,0 +1,37 @@
+<md-tabs md-dynamic-height md-border-bottom>
+    <md-tab  ng-repeat="tab in tabs" label={{tab.name}}>
+        <md-content>
+            <md-grid-list
+                    md-cols-xs="1" md-cols-sm="2" md-cols-md="3" md-cols-gt-md="4"
+                    md-row-height="2:1"
+                    md-gutter="20px" md-gutter-gt-sm="8px" flex>
+                <md-grid-tile md-rowspan="1" md-colspan="1" md-ink-ripple="black" ng-repeat="emp in employee">
+                    <div class="sag-container" flex="100">
+                        <div layout="column" flex="80" class="color-black" style="height: 100%">
+                            <div layout="row">
+                                <div class="sag-title">{{emp.name}}</div>
+                            </div>
+                            <div layout="row">
+                                <div class="sag-title sag-subtitle">{{emp.mail}}</div>
+                            </div>
+                        </div>
+                        <div layout="column" flex="20" class="color-yellow" style="height: 100%">
+                            <md-menu md-offset="0-7">
+                                <md-button class="md-fab md-mini md-raised"
+                                           ng-click="$mdOpenMenu($event)">
+                                    <md-icon md-menu-origin><i class="material-icons" style="color: black">format_list_bulleted</i></md-icon>
+                                </md-button>
+                                <md-menu-content width="2">
+                                    <md-menu-item ng-repeat="menu in menuEmployee">
+                                        <md-button><span class="md-menu-align-target">{{menu}}</span>
+                                        </md-button>
+                                    </md-menu-item>
+                                </md-menu-content>
+                            </md-menu>
+                        </div>
+                    </div>
+                </md-grid-tile>
+            </md-grid-list>
+        </md-content>
+    </md-tab>
+</md-tabs>

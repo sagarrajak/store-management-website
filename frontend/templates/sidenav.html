@@ -1,0 +1,21 @@
+<div class="sag-main-container" layout="row" >
+    <md-sidenav
+            class="md-sidenav-left "
+            md-component-id="left"
+            md-whiteframe="4"
+            flex="20"
+            layout="column">
+        <md-content layout-padding class="sag-sidenav">
+            <md-toolbar layout="row" class="md-toolbar-tools">
+            </md-toolbar>
+            <md-list layout="column">
+
+                <div ng-repeat="ele in sideNav">
+                    <md-divider></md-divider>
+                    <md-list-item md-ink-ripple="black" ui-sref={{ele.state}}>{{ele.name}}</md-list-item>
+                    <md-divider></md-divider>
+                </div>
+
+            </md-list>
+        </md-content>
+    </md-sidenav>

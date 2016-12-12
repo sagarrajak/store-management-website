@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>index</title>
+
+
+    <link rel="stylesheet" href="../tem-libreary/angular-material.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="../tem-libreary/angular-animate.js" rel="stylesheet">
+    <link rel="stylesheet" href="../css.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-animate.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-aria.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angular_material/1.0.0/angular-material.min.js"></script>
+    <script src="../tem-libreary/angular-ui-router.min.js"></script>
+    <script type="text/javascript" src="../app.js"></script>
+    <script type="text/javascript" src="../factory/employee-fac.js"></script>
+
+
+    <style>
+        .sag-title {
+            font-size: large;
+            font-style: normal;
+            font-weight: bold;
+            margin: 5px;
+        }
+        .sag-subtitle {
+            font-size: small;
+        }
+        md-grid-list {
+            margin: 20px 10px 10px;
+        }
+        md-grid-tile {
+
+            border-radius: 20px;
+            border: 2px solid black;
+        }
+        .sag-container {
+            margin: 10px 5px 5px;
+            height: 100%;
+            display: flex;
+            width: 100%;
+        }
+        .sag-main-container {
+            width: 100%;
+            height: 100%;
+        }
+        .sag-sidenav {
+            background-color: rgba(255, 0, 86, 0.47);
+            height: 100%;
+            width: 100%;
+            padding: 0;
+        }
+    </style>
+</head>
+<div ng-app="myApp" ng-controller="myCon">
+    <body>
+    <sag-toolbar></sag-toolbar>
+        <div  layout="row">
+            <sag-navbar></sag-navbar>
+                 <md-content  layout="column" flex="100" ui-view>
+            </md-content>
+        </div>
+    </body>
+
+</div>
+
+</html>
