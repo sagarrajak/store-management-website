@@ -14,8 +14,8 @@ milestone 1:
 milestone 2 :
                     2 date 18 dec 2016
                     added cloudinary to api
-                    uploaded file to bacend
-                    laded data and image to page,completed
+                    uploaded file to backend
+                    loaded data and image to page,completed
                     @done:
 
 milestone 3 :
