@@ -1,7 +1,11 @@
-var     mongoose  =  require('mongoose');
-var     employee  = require('../schemas/employee');
+var  mongoose  =  require('mongoose');
+var  employee  = require('../schemas/employee');
+var  fileUpload = require('express-fileupload');
+var  cloudinary = require("../../cloudinary_config");
+
 module.exports = function(app,express){
     var api = express.Router();
+
     api.use('/:id' , function( req, res , next ){
       //todo:3 dec 2016 validater fucntion for employee
        var id = req.params.id;
@@ -20,18 +24,37 @@ module.exports = function(app,express){
        else if(id=='clear-employee'){
            next();
        }
+       else if(id=='upload-employee-image'){
+           next();
+       }
        else  res.status(404).send("not found!");
     });
+
+    api.post('/upload-employee-image',function(req,res){
+
+        if(req.files!=undefined){
+            cloudinary.uploader.upload( req.files.path , function(result) {
+                    if( result.error.http_code != undefined )
+                        res.send(result.error.http_code);
+                    else
+                        res.send(201).send({message:result.public_id});
+
+            });
+        }
+        else
+          res.send(404).send({message:"image not found"});
+    });
+
     api.post( '/add-employee' , function( req , res ){
         var emp  = new employee({
             name          :  req.body.name,
-            age           :  req.body.ageNum,
             date_of_birth :  new Date( req.body.birthYear , req.body.birthMonth , req.body.birthDate ),
             date_of_join  :  new Date( req.body.joinYear,req.body.joinMonth,req.body.joinDate),
             mail          :  req.body.mail,
             pan_num       :  req.body.panNum,
             phone_number  :  req.body.phoneNum,
-            work_profile  :  req.body.profile
+            work_profile  :  req.body.profile,
+            image         :  req.body.image
         });
         emp.save(function(err){
             if(err)
@@ -40,6 +63,8 @@ module.exports = function(app,express){
                 res.json({message:'new employee is added'});
         });
     });
+
+
     api.get( '/list-employee' ,  function( req , res ){
         employee.find({}).exec(function(err,emp){
             if(err)
@@ -48,6 +73,8 @@ module.exports = function(app,express){
                res.json(emp);
         });
     });
+
+
     api.get( '/delete-employee' , function(req , res){
         employee.find({_id : req.query['id'] }).remove().exec(function(err){
             if(err)
@@ -56,6 +83,8 @@ module.exports = function(app,express){
                 res.status(200).json({message:'date removed successfully!!'});
         });
     });
+
+
     api.post( '/edit-employee' , function(req,res) {
             employee.findByIdAndUpdate( req.body.id  ,
                 {
@@ -79,6 +108,8 @@ module.exports = function(app,express){
 
         )
     });
+
+
     api.get('/clear-employee',function(req,res){
        employee.find({})
            .remove()
@@ -89,5 +120,7 @@ module.exports = function(app,express){
                 res.status(200).json({message:"data cleared successfully"});
        });
     });
+
+
     return api;
 }

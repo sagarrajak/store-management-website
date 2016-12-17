@@ -1,14 +1,29 @@
 working in product type api
-date : 30dec2016
-    working on schema,completed schema and ER digram for product and stock
-    working on api now
+date : 30nov2016
+         working on schema,completed schema and ER digram for product and stock
+         working on api now
 date : 1dec2016
-    start working on api of products and employee
+         start working on api of products and employee
 date : 12 dec2016
-    milestone 1
-            used angular-material
-            used ui-router
-            success fully fetched data from backend
+milestone 1:
+                    used angular-material
+                    used ui-router
+                    successfully fetched data from backend
+                    @done
 
+milestone 2 :
+                    2 date 18 dec 2016
+                    added cloudinary to api
+                    uploaded file to bacend
+                    laded data and image to page,completed
+                    @done:
+
+milestone 3 :
+                      add fab for add employee
+                      create dialog for details employee
+                      implement delete employee api to dilog and api
+                      complete full loading and creating employee api with image
+                      commit :
+                      *todo,
 
 

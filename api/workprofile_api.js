@@ -47,9 +47,7 @@ module.exports = function(app,express){
                else
                   res.send(400).json({message:"crated successfully"});
          });
-
     });
-
     api.get('/delete-work-profile', function(req,res){
 
         work_profile.find({}).exec(function(err,emp){
@@ -62,22 +60,15 @@ module.exports = function(app,express){
         });
 
     });
-
     api.get('/modify-work-profile', function(req,res){
 
 
 
-
-
     });
-
     api.get('/list-work-profile',function(req,res){
 
 
-
-
     });
-
     return api;
 }
 

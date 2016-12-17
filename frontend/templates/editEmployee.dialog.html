@@ -1,0 +1,87 @@
+<md-dialog  aria-label="Edit employee" id="popUpContainer" >
+    <form>
+        <md-toolbar>
+            <div class="md-toolbar-tools">
+                <h2>Edit employee</h2>
+                <span flex></span>
+                <md-button class="md-icon-button" ng-click="cancel()">
+                    <md-icon><i class="material-icon">clear</i></md-icon>
+                </md-button>
+            </div>
+        </md-toolbar>
+        <md-dialog-content flex="100">
+            <div class="md-dialog-content">
+                <md-content layout="column" layout-padding ng-cloak>
+                    <form name="Employee">
+
+                        <div layout-gt-xs="row">
+                            <md-input-container flex-gt-xs>
+                                <label>Name :</label>
+                                <input required ng-model="Employee.name"/>
+
+                                <div ng-messages="Employee.name.$error">
+                                    <div ng-message="required">This is required.</div>
+                                </div>
+                            </md-input-container>
+                            <md-input-container flex-gt-xs>
+                                <label>Mail :</label>
+                                <input required ng-model="Employee.mail" type="email"/>
+
+                                <div ng-messages="Employee.mail.$error">
+                                    <div ng-message="required">This is required.</div>
+                                </div>
+                            </md-input-container>
+                        </div>
+
+                        <div layout-gt-xs="row">
+
+                            <md-input-container flex-gt-xs>
+                                <label > Date of birth :</label>
+                                <input   moment-picker="Employee.dateOfBirth"   ng-model="Employee.dateOfBirth"  format="DD:MM:YYYY"   />
+                            </md-input-container>
+
+                            <md-input-container flex-gt-xs>
+                                <label>Pan num :</label>
+                                <input required ng-model="Employee.panNum" type="text" md-maxlength="6"/>
+
+                                <div ng-messages="Employee.panNum.$error" role="alert" multiple >
+                                    <div ng-message="required" class="ng-message">This is required.</div>
+                                    <div ng-message="md-maxlength" class="ng-meesage" >Not above than 6 character</div>
+                                </div>
+                            </md-input-container>
+
+                        </div>
+
+
+                        <div layout-gt-xs="row">
+                                <md-input-container flex-gt-xs >
+                                    <label>Phone num :</label>
+                                    <input required ng-model="Employee.phoneNum" md-maxlength="10" type="number"/>
+                                    <div ng-messages="Employee.phoneNum.$error" role="alert" multiple >
+                                        <div ng-message="required"  class="ng-message" >This is required.</div>
+                                        <div ng-message="md-maxlength"  class="ng-message" >Phone num should not above than 10 char</div>
+                                    </div>
+                                </md-input-container>
+                                <md-input-container flex-gt-xs>
+                                    <label>Work profile :</label>
+                                    <md-select ng-model="Employee.workProfile">
+                                        <md-option ng-repeat="wp in workProfile"  value="{{wp}}">{{wp}}</md-option>
+                                    </md-select>
+                                </md-input-container>
+                        </div>
+                        <div class="row" flex-gt-xs>
+                            <sag-upload></sag-upload>
+                        </div>
+                    </form>
+
+                </md-content>
+            </div>
+        </md-dialog-content>
+        <md-dialog-action layout="row">
+            <md-button class="md-primary md-raised"  ng-click="submit()">Save</md-button>
+            <span flex></span>
+            <md-button  class="md-primary md-raised" ng-click="closeDialog()">Cancel</md-button>
+        </md-dialog-action>
+
+    </form>
+</md-dialog>
