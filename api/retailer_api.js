@@ -2,7 +2,7 @@
  * Created by SAGAR on 11/30/2016.
  */
 var  mongoose =  require('mongoose');
-var  retailer = require('../scheams/retailer');
+var  retailer = require('../schemas/retailer');
 module.exports = function(app,express){
         var api = express.Router();
         api.post('/add-retailer',function(req , res ){

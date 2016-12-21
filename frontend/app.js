@@ -5,19 +5,22 @@
                  $mdSidenav('left').open();
            }
 
-
-           $scope.tabs = [
-            {
-               name : "Employee"
-            } ,
-            {
-               name : "Admin" ,
-
-            },
-            {
-               name : "Retailer"
-            }
-        ];
+           $scope.myConTitle = "Employee";
+           $scope.tabsEmployee = [
+                {
+                   name : "Employee"
+                } ,
+                {
+                   name : "Admin" ,
+                },
+                {
+                   name : "Retailer"
+                }
+           ];
+           $scope.tabProduct = [
+                  {name : 'Product'},
+                  {name : 'Category'}
+              ];
            $scope.menuEmployee = [
                {
                    name : "Delete",
@@ -25,6 +28,10 @@
                },
                {
                    name : "Details",
+                   fun  :  "details"
+               },
+               {
+                   name :  "Edit details",
                    fun  :  "edit"
                },
                {
@@ -35,27 +42,33 @@
            $scope.sideNav=[
                {
                   name : "Employee/admin" ,
-                  state : "home"
+                  state : "home",
+                  Title : "Employee"
                },
                {
                    name : "About" ,
-                   state : "home"
+                   state : "about" ,
+                   Title : "About"
                },
                {
                    name : "Checkin" ,
-                   state : "home"
+                   state : "home",
+                   Title : "Checkin"
                },
                {
                    name : "Checkout" ,
-                   state : "home"
+                   state : "home" ,
+                   Title : "Checkout"
                },
                {
                    name : "Dashboard" ,
-                   state : "home"
+                   state : "home",
+                   Title :"Dashboard"
                },
                {
                    name : "Product" ,
-                   state : "home"
+                   state : "product",
+                   Title : "Product"
                },
                {
                    name : "Brand" ,
@@ -71,40 +84,63 @@
                }
            ];
 
-            var promise = employeeProvider.getEmployee();
-            promise.then(
-                function(payload){
-                    $scope.employee = payload.data;
-                },
-                function(err){
-                    $log.error('failed',err.data);
-                }
-            );
+           $scope.loadEmployee = function(){
+                employeeProvider.
+                        getEmployee()
+                         .then(
+                                    function (payload) {
+                                        $scope.employee = payload.data;
+                                    },
+                                    function (err) {
+                                        $log.error('failed', err.data);
+                                    }
+                              );
+             }
 
     })
      .directive('sagToolbar',function(){
          return{
              restrict : 'E' ,
+             controller : function($scope){
+             },
              templateUrl: 'templates/toolbar.html'
          }
      })
      .directive('sagNavbar',function(){
         return{
-           restrict : 'E' ,
-           templateUrl : 'templates/sidenav.html',
-           link :function(scope,ele,attr){
-           }
+            restrict : 'E' ,
+            controller : function($scope){
+                 $scope.setToolbar = function(title){
+                     $scope.myConTitle=title;
+                }
+            },
+            templateUrl : 'templates/sidenav.html',
         }
      })
-     .factory("employeeServices",function($http){
-         return{
-                 getlist : function(){ return $http.get('/api/list-employee'); }
-              }
-      })
      .config(function( $stateProvider , $urlRouterProvider ){
+
             $urlRouterProvider.otherwise('/login');
-            $stateProvider.state( "home" , {
-                url : "/home",
-                templateUrl : "templates/employee.html"
-           });
+            $stateProvider
+                .state( "home" , {
+                     url : "/home",
+                     templateUrl : "templates/employee.html",
+                     controller  : function($scope){
+
+                     }
+                })
+                .state( "product",{
+                     url:"/product",
+                     templateUrl : "templates/product.html",
+                     controller  : function($scope){
+
+                     }
+                })
+                .state("about",{
+                    url: "/about",
+                    templateUrl : "templates/about.store.html",
+                    controller : function(){
+
+                    }
+                });
+
      });

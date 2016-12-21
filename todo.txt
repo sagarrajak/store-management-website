@@ -12,18 +12,36 @@ milestone 1:
                     @done
 
 milestone 2 :
-                    2 date 18 dec 2016
-                    added cloudinary to api
-                    uploaded file to backend
-                    loaded data and image to page,completed
-                    @done:
+                  2 date 18 dec 2016
+                  added cloudinary to api
+                  uploaded file to backend
+                  loaded data and image to page,completed
+                  @done:
 
-milestone 3 :
-                      add fab for add employee
-                      create dialog for details employee
-                      implement delete employee api to dilog and api
-                      complete full loading and creating employee api with image
-                      commit :
-                      *todo,
+milestone 3 :     19 dec 2016
+                  add fab for add employee *
+                  create dialog for details employee *
+                  complete full loading and creating employee api with image*
+                  implement delete employee api to dialog and api*
+                  "modify employee" dialog
+                  "work profile" api(come to  store setting)
+                   add filter in employee page
+                   commit :
+                  *todo,
+
+ milestone 4 :    creating about page*,
+                  create setting page,
+                  create login page,
+                  create dashboard page,
+                  create product card*
+                  create product add dialog*
+                  complete "remove product" dialog
+                  complete "category" dialog
+                  complete list view for category
+                  create brand schema and api
+                  create progress circul to image upload
+
+
+
 
 

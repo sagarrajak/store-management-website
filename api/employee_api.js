@@ -3,41 +3,50 @@ var  employee  = require('../schemas/employee');
 var  fileUpload = require('express-fileupload');
 var  cloudinary = require("../../cloudinary_config");
 
+
 module.exports = function(app,express){
+
     var api = express.Router();
-
-    api.use('/:id' , function( req, res , next ){
-      //todo:3 dec 2016 validater fucntion for employee
-       var id = req.params.id;
-       if(id=='add-employee'){
-           next();
-       }
-       else if(id=='list-employee'){
-           next();
-       }
-       else if(id=='delete-employee'){
-           next();
-       }
-       else if(id=='edit-employee'){
-           next();
-       }
-       else if(id=='clear-employee'){
-           next();
-       }
-       else if(id=='upload-employee-image'){
-           next();
-       }
-       else  res.status(404).send("not found!");
-    });
-
+    //api.use('/:id' , function( req, res , next ){
+    //  //todo:3 dec 2016 validater fucntion for employee
+    //   var id = req.params.id;
+    //
+    //   if(id=='create-employee'){
+    //       next();
+    //   }
+    //   else if(id=='list-employee'){
+    //       next();
+    //   }
+    //   else if(id=='delete-employee'){
+    //       next();
+    //   }
+    //   else if(id=='edit-employee'){
+    //       next();
+    //   }
+    //   else if(id=='clear-employee'){
+    //       console.log(id);
+    //       next();
+    //   }
+    //   else if(id=='upload-employee-image'){
+    //       next();
+    //   }
+    //   else  res.status(404).send("not found!");
+    //
+    //});
     api.post('/upload-employee-image',function(req,res){
 
         if(req.files!=undefined){
-            cloudinary.uploader.upload( req.files.path , function(result) {
-                    if( result.error.http_code != undefined )
-                        res.send(result.error.http_code);
+
+            console.log(req.files);
+
+            cloudinary.uploader.upload( req.files[0].path , function(result){
+                        console.log(req.files[0].path);
+                        //console.log(result.error);
+                    if( result.error != undefined ){
+                          res.status(result.error.http_code).send(result.error);
+                    }
                     else
-                        res.send(201).send({message:result.public_id});
+                        res.status(201).send({message:result.public_id});
 
             });
         }
@@ -45,23 +54,25 @@ module.exports = function(app,express){
           res.send(404).send({message:"image not found"});
     });
 
-    api.post( '/add-employee' , function( req , res ){
+    api.post( '/create-employee' , function( req , res ){
         var emp  = new employee({
             name          :  req.body.name,
-            date_of_birth :  new Date( req.body.birthYear , req.body.birthMonth , req.body.birthDate ),
+            date_of_birth :  req.body.date_of_birth,
             date_of_join  :  new Date( req.body.joinYear,req.body.joinMonth,req.body.joinDate),
             mail          :  req.body.mail,
-            pan_num       :  req.body.panNum,
-            phone_number  :  req.body.phoneNum,
+            pan_num       :  req.body.pan_num,
+            phone_number  :  req.body.phone_num,
             work_profile  :  req.body.profile,
             image         :  req.body.image
         });
+
         emp.save(function(err){
             if(err)
                 res.status(400).send(err);
             else
                 res.json({message:'new employee is added'});
         });
+
     });
 
 
@@ -75,18 +86,22 @@ module.exports = function(app,express){
     });
 
 
-    api.get( '/delete-employee' , function(req , res){
-        employee.find({_id : req.query['id'] }).remove().exec(function(err){
-            if(err)
-                res.status(400).send(err);
-            else
-                res.status(200).json({message:'date removed successfully!!'});
+    api.post( '/delete-employee' , function(req , res){
+
+        employee.find({_id : req.body._id })
+                                        .remove()
+                                            .exec(function(err){
+                                                    if(err)
+                                                        res.status(400).send(err);
+                                                    else
+                                                        res.status(200).json({message:'date removed successfully!!'});
+                                                });
+
         });
-    });
 
 
     api.post( '/edit-employee' , function(req,res) {
-            employee.findByIdAndUpdate( req.body.id  ,
+            employee.findByIdAndUpdate( req.body.employee_id  ,
                 {
                     $set :{
                             name          :  req.body.name,

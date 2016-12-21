@@ -6,13 +6,13 @@
             flex="20"
             layout="column">
         <md-content layout-padding class="sag-sidenav">
-            <md-toolbar layout="row" class="md-toolbar-tools">
+            <md-toolbar layout="row" class="md-toolbar-tools" style="background-color: black">
             </md-toolbar>
             <md-list layout="column">
 
                 <div ng-repeat="ele in sideNav">
                     <md-divider></md-divider>
-                    <md-list-item md-ink-ripple="black" ui-sref={{ele.state}}>{{ele.name}}</md-list-item>
+                    <md-list-item ng-click="setToolbar(ele.Title)" md-ink-ripple="black" ui-sref={{ele.state}}>{{ele.name}}</md-list-item>
                     <md-divider></md-divider>
                 </div>
 

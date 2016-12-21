@@ -19,19 +19,21 @@
     <script src="https://ajax.googleapis.com/ajax/libs/angular_material/1.0.0/angular-material.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.10.6/moment-with-locales.js"></script>
     <script src="//cdn.rawgit.com/indrimuska/angular-moment-picker/master/dist/angular-moment-picker.min.js"></script>
+
+
     <script src="../tem-libreary/ng-file-upload.min.js"></script>
-
-
-
     <script src="../tem-libreary/angular-ui-router.min.js"></script>
     <script type="text/javascript" src="../app.js"></script>
-    <script type="text/javascript" src="../provider/employeeProvider.js"></script>
-    <script type="text/javascript" src="../factory/employee-fac.js"></script>
-    <script type="text/javascript" src="../controller/dialogController.js"></script>
+    <script type="text/javascript" src="../services/employeeProvider.js"></script>
+    <script type="text/javascript" src="../controller/dialogEmployeeController.js"></script>
+    <script type="text/javascript" src="../controller/dialogProductController.js"></script>
     <script type="text/javascript" src="../directive/uploadfile.js"></script>
-
+    <script type="text/javascript" src="../services/toastDialogServices.js"></script>
 
     <style>
+        body{
+            height: 100%;
+        }
         .sag-title {
             font-size: large;
             font-style: normal;
@@ -42,49 +44,165 @@
             font-size: small;
         }
         md-grid-list {
-            margin: 20px 10px 10px;
+            margin: 0.5em 0.25em .25em;
         }
-        md-grid-tile {
-
-            border-radius: 20px;
-            border: 2px solid black;
-        }
-        .sag-container {
-            margin: 10px 5px 5px;
+        .sag-employee-card {
             height: 100%;
             display: flex;
-            width: 100%;
+            padding: 5px;
         }
         .sag-main-container {
             width: 100%;
             height: 100%;
+
         }
         .sag-sidenav {
-            background-color: rgba(255, 0, 86, 0.47);
+            background-color: #b95159;
             height: 100%;
             width: 100%;
             padding: 0;
         }
+
         #popUpContainer{
             width  : 100%;
             height : 100%;
         }
-        .imageContainer{
-           border-radius: 75px;
-           border : 2px solid black;
+        .sag-text{
+            text-align: center;
+            margin: 20px 10px;
+            text-decoration: none;
+            font-weight: 100;
+            font-size: large;
+
+        }
+        .employee-image-container {
+           border-radius: 100px;
+           border : 2px solid #b95159;
+        }
+        .md-button.md-fab.md-fab-bottom-right {
+            top: auto;
+            right: 20px;
+            bottom: 20px;
+            left: auto;
+            position: fixed;
+        }
+        .md-content{
+            padding: 4px;
+        }
+        .sag-details{
+            margin : 10px;
+            padding: 10px;
+        }
+        .sag-dialog-container{
+            display: flex;
+            justify-content: center;
+        }
+        /*container for about page*/
+        .sag-about-container{
+                width: 100%;
+                height: 100%;
+                background-color: #b95159;
+         }
+        .sag-about-details{
+                margin-left: 15em;
+                margin-right: 15em;
+               background-color: white;
+               padding: 1em;
+         }
+        .sag-heading-text {
+               font-weight: bold;
+               color: #b95159 ;
+               margin-top : 0.5em;
+               margin-bottom: 0.5em;
+               font-size: x-large;
+               text-align: center;
+               padding: 1em;
+        }
+        .sag-about-adress-container {
+            font-weight: normal;
+            font-size :larger;
+            text-align: left;
+            margin-top: 1em;
+            margin-bottom: 1em;
+            padding: 1em;
+            color:#b95159;
+        }
+        .sag-about-adress-text{
+            padding: 0.1em;
+        }
+        .sag-about-image{
+            width: 100%;
+            height: 12em;
+        }
+        @media only screen and ( max-width: 960px){
+            /*gt sm  devices*/
+            .sag-about-details{
+                margin: 1em;
+                padding: 0.5em;
+            }
+            .sag-about-image{
+                width: 100%;
+                height: 10em;
+            }
+            .sag-heading-text {
+                margin-top : 1em;
+                margin-bottom: 1em;
+                padding: 1em;
+            }
+            .sag-about-adress-container {
+                margin-top: 1em;
+                margin-bottom: 1em;
+                padding: 1em;
+            }
+        }
+        @media only screen and ( max-width: 600px){
+                /*xs devices*/
+                .sag-about-details{
+                    margin: 1em;
+                    padding: 0.5em;
+                }
+                .sag-about-image{
+                    width: 100%;
+                    height: 10em;
+                }
+                .sag-heading-text {
+                    margin-top : 1em;
+                    margin-bottom: 1em;
+                    font-size: larger;
+                    padding: 1em;
+                }
+                .sag-about-adress-container {
+                    margin-top: 1em;
+                    font-size: small;
+                    margin-bottom: 1em;
+                    padding: 1em;
+                }
+        }
+        /* css for product card */
+        .sag-product-card{
+            width: 100%;
+            height: 100%;
+            margin: 0.2em;
+            padding: 0.1em;
         }
     </style>
 </head>
-<div ng-app="myApp" ng-controller="myCon" ng-cloak >
+<div ng-app="myApp"   ng-controller="myCon as par" ng-init="loadEmployee()"  ng-cloak >
     <body>
-    <sag-toolbar></sag-toolbar>
-        <div  layout="row">
-            <sag-navbar></sag-navbar>
-                 <md-content   ng-controller="dialogController"  ng-init="initDatepicker();" layout="column" flex="100" ui-view>
-            </md-content>
+        <sag-toolbar></sag-toolbar>
+        <div ng-controller="dialogController as ch" >
+            <div layout="row">
+                <sag-navbar></sag-navbar>
+                         <md-content layout="column" flex="100" ui-view `>
+                </md-content>
+            </div>
+            <md-button class="md-fab md-fab-bottom-right" aria-label="Add employee"
+                       ng-click="showDialog( $event , 'edit' )">
+                <md-tooltip md-direction="top">Add employee</md-tooltip>
+                <md-icon class="matrial-icon">add_circle</md-icon>
+            </md-button>
         </div>
     </body>
-
 </div>
 
 </html>

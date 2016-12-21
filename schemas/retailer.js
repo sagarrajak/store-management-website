@@ -1,7 +1,7 @@
 /**
  * Created by SAGAR on 10/16/2016.
  */
-var   mongoose = module.exports('mongoose');
+var   mongoose = require('mongoose');
 
 var retailer =  mongoose.Schema({
 
@@ -11,7 +11,7 @@ var retailer =  mongoose.Schema({
     adress : { type : String  }
 
 });
-module.exports = Mongoose.model( 'retailer' ,  retailer );
+module.exports = mongoose.model( 'retailer' ,  retailer );
 
 
 

@@ -8,12 +8,9 @@ angular.module('myApp')
           scope : {saveFileFun: '&'},
           templateUrl : 'templates/upload.file.html',
           link : function ($scope,ele,attr){
-
               var inputFile =  $(ele[0].querySelector('#fileInput'));
               var buttonInput = $(ele[0].querySelector('#uploadButton'));
               var inputLabel = $(ele[0].querySelector('#textInput'));
-
-
               buttonInput.bind('click',function(){
                     inputFile.click();
               });
@@ -29,7 +26,6 @@ angular.module('myApp')
                    }
                   $scope.$apply();
               });
-
           }
       };
     });

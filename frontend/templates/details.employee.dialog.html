@@ -1,0 +1,44 @@
+<md-dialog aria-label="ShowContent" id="popUpContainer" ng-c>
+    <form ng-cloak>
+        <md-toolbar>
+            <div class="md-toolbar-tools">
+                <div><h2>{{dialogTitle}}</h2></div>
+            </div>
+        </md-toolbar>
+        <div class="sag-dialog-container" layout="column">
+                <md-dialog-content>
+                    <div class="md-dialog-content" layout="row" layout-xs="column">
+
+                        <div class="md-whiteframe-2dp" style="flex-grow: 1">
+                            <div flex>
+                                <div style="justify-content: center"><img
+                                        src="http://res.cloudinary.com/droxr0kdp/image/upload/w_400,h_400,c_crop,g_face/w_400/v1482011353/{{items.image}}"
+                                        width="300" height="300"/>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div layout="column" style="flex-grow: 4">
+                            <div layout="row" class="md-whiteframe-2dp sag-details">
+                                <div class="sag-text">{{items.name}}</div>
+                            </div>
+                            <div layout="row" class="md-whiteframe-2dp sag-details">
+                                <div class="sag-text">{{items.mail}}</div>
+                            </div>
+                            <div layout="row" class="md-whiteframe-2dp sag-details">
+                                <div class="sag-text">{{items.phone_num}}</div>
+                            </div>
+                            <div layout="row" class="md-whiteframe-2dp sag-details">
+                                <div class="sag-text">{{items.pan_num}}</div>
+                            </div>
+                        </div>
+                    </div>
+
+            </md-dialog-content>
+
+            <md-dialog-actions layout="row">
+                <md-button class="md-primary md-raised" ng-click="closeDialog()">Ok</md-button>
+            </md-dialog-actions>
+        </div>
+    </form>
+</md-dialog>
