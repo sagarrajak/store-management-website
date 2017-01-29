@@ -1,38 +1,59 @@
 <md-tabs md-dynamic-height md-border-bottom >
-    <md-tab label="Product" >
-        <md-content>
+    <md-tab label="Product">
 
-            <div layout="column">
-                <md-input-container flex>
-                </md-input-container>
+                <div  class="sag-product-search-box" flex="100">
+                    <span flex></span>
+                    <div layout="row" flex-gt-lg="40" flex-sm="40" flex-xs="100" style="margin-right: 2em">
+                        <md-icon style="margin-bottom: 1em"><i class="material-icons" flex="10">search</i></md-icon>
+                        <md-input-container flex="90" class="md-icon-float md-block sag-product-search-box-padding">
+                            <input ng-model="employee.search" type="text" aria-label="something" >
+                        </md-input-container>
+                    </div>
+                </div>
 
                 <md-grid-list
-                        md-cols-xs="2" md-cols-sm="3" md-cols-md="4" md-cols-gt-md="5"
+                        md-cols-xs="1" md-cols-sm="2" md-cols-md="3" md-cols-gt-md="4"
                         md-row-height="2:1"
                         md-gutter="20px" md-gutter-gt-sm="8px" flex>
-
                     <md-grid-tile md-rowspan="1" md-colspan="1" md-ink-ripple="black" ng-repeat="emp in employee">
-                        <div class="sag-product-card md-whiteframe-2dp" flex="100" layout="column">
-                            <div flex="20">
-                                <div>name</div>
-                                <div>price</div>
+                        <div class="sag-product-card md-whiteframe-2dp" flex="100" layout="row">
+                            <div  flex="50">
+                                <div flex="30" layout="column">
+                                    <div layout="row" class="sag-title">Name</div>
+                                    <div layout="row" class="sag-title sag-subtitle">Price</div>
+                                </div>
+                                <div flex="70" layout="row">
+                                    <div>
+                                        <img class="sag-product-image"
+                                             src="http://res.cloudinary.com/droxr0kdp/image/upload/w_150,h_150,c_crop,g_face/w_200/v1482011353/l3pzl3rguktkm1kecxpg">
+                                    </div>
+                                </div>
                             </div>
-                            <div flex="80">
-                                <div><img src="#"></div>
+                            <span flex></span>
+                            <div layout="row">
+                                <section >
+                                    <div class="sag-button-group" layout="column">
+                                        <md-button class="md-icon-button left">
+                                            <md-tooltip md-direction="right">Create new product</md-tooltip>
+                                            <md-icon class="material-icon">create</md-icon>
+                                        </md-button>
+                                        <md-button class="md-icon-button middle">
+                                            <md-tooltip md-direction="right">Delete this product</md-tooltip>
+                                            <md-icon class="material-icon">delete</md-icon>
+                                        </md-button>
+                                        <md-button class="md-icon-button right">
+                                            <md-tooltip md-direction="right">Show details</md-tooltip>
+                                            <md-icon class="material-icon">details</md-icon>
+                                        </md-button>
+                                    </div>
+                                </section>
                             </div>
                         </div>
                     </md-grid-tile>
-
                 </md-grid-list>
-
             </div>
-
         </md-content>
     </md-tab>
-
     <md-tab label="Category" >
-
-
-
     </md-tab>
 </md-tabs>

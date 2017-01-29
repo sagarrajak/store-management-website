@@ -26,24 +26,28 @@ angular.module("myApp")
         $scope.submit = function(event,querySelctor){
             //todo : form error validation check
                 if( employeeFac.getImage() == undefined ){
-                    $scope.showToast( "supply image!" ,  $(angular.element(document.getElementById('#popUpContainer')) ) );
-                    return
+                     //$scope.showToast( "supply image!" ,  $(angular.element(document.getElementById('#popUpContainer')) ) );
+                     return
                 }
                 employeeProvider
                     .uploadImages( employeeFac.getImage() )
                          .then(
                                 function(res){
+                                       console.log(res);
                                        $scope.Employee.image = res.data.message;
                                        employeeProvider.createEmployee($scope.Employee)
                                            .then(
                                                function(suc){
-                                                      toastDialogServices.alertDialog( "Success ", event  ,"Employee successfully created", "Ok" , querySelctor );
+                                                      console.log(suc);
+                                                      toastDialogServices.alertDialog( "Success ", event ,"Employee successfully created", "Ok" , querySelctor );
                                                  },function(err){
+                                                      console.log(err);
                                                       toastDialogServices.alertDialog( "Error " + err.status ,  event  , err.data.message , "Ok" , querySelctor );
                                                   });
                                 },
                                 function(err){
-                                    toastDialogServices.alertDialog( "Error " + err.status ,  event  , err.data.message , "Ok" , querySelctor );
+                                    console.log(err);
+                                    toastDialogServices.alertDialog( "Error " + err.status ,  event  , err.data , "Ok" , querySelctor );
                                 },
                                 function(evt){
                                     var progressPercentage = parseInt(100.0 * evt.loaded / evt.total);
@@ -100,7 +104,7 @@ angular.module("myApp")
 
                       $mdDialog.show({
                                   controller: 'dialogController' ,
-                                  templateUrl: 'templates/editEmployee.dialog.html',
+                                  templateUrl: 'templates/edit.employee.dialog.html',
                                   parent: angular.element(document.body),
                                   targetEvent: ev,
                                   clickOutsideToClose: true,
@@ -117,8 +121,9 @@ angular.module("myApp")
                               );
                    break;
 
-                case  "details" :
 
+
+                case  "details" :
                     $mdDialog.show({
                             controller: function($scope,emp,$mdDialog){
                                 $scope.items = emp;

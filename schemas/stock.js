@@ -9,13 +9,15 @@ var  ObjectId  =  mongoose.Schema.Types.ObjectId;
 
 var stock = mongoose.Schema({
 
-    quantity    :  {  type  : Number  , require : true   },
+    quantity    :  {  type  :  Number  , require : true   },
     seller      :  {  type  :  ObjectId , ref  : 'retailer' },
     product     :  {  type  :  ObjectId , ref  : 'product' },
-    buyed_price :  {  type  : Number , require : true },
-    exp_date    :  {  type  : Date , require : true }
+    buyed_price :  {  type  :  Number , require : true },
+    exp_date    :  {  type  :  Date  },
+    details     :  {  type  :  String },
+    buyed_date  :  {  type :   Date , require : true }
 
 });
 
-module.exports = mongoose.model('stock' , stock );
+module.exports = mongoose.model( 'stock' , stock );
 

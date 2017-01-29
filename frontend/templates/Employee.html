@@ -1,39 +1,51 @@
 <md-tabs md-dynamic-height md-border-bottom >
-    <md-tab  ng-repeat="tab in tabs" label={{tab.name}}>
-        <md-content>
-            <md-grid-list
-                    md-cols-xs="1" md-cols-sm="2" md-cols-md="3" md-cols-gt-md="4"
-                    md-row-height="2:1"
-                    md-gutter="20px" md-gutter-gt-sm="8px" flex>
-                <md-grid-tile md-rowspan="1" md-colspan="1" md-ink-ripple="black" ng-repeat="emp in employee" >
-                    <div class="sag-container" flex="100">
-                        <div layout="column" flex="80" class="color-black" style="height: 100%">
-                            <div layout="row">
-                                <div class="sag-title">{{emp.name}}</div>
-                            </div>
-                            <div layout="row">
-                                <div class="sag-title sag-subtitle">{{emp.mail}}</div>
-                            </div>
-                            <div layout="row">
-                                <div ><img class="imageContainer" src="http://res.cloudinary.com/droxr0kdp/image/upload/w_300,h_300,c_crop,g_face/w_200/v1482011353/employee.jpg" width="100" height="100" /></div>
-                            </div>
-                        </div>
-                        <div layout="column" flex="20" class="color-yellow" style="height: 100%">
-                            <md-menu md-offset="0-7">
-                                <md-button class="md-fab md-mini md-raised"
-                                           ng-click="$mdOpenMenu($event)">
-                                    <md-icon md-menu-origin><i class="material-icons" style="color: black">format_list_bulleted</i></md-icon>
-                                </md-button>
-                                <md-menu-content width="2">
-                                    <md-menu-item ng-repeat="menu in menuEmployee">
-                                        <md-button><span class="md-menu-align-target" ng-click = "showDialog( $event , menu.fun ) " >{{menu.name}}</span></md-button>
-                                    </md-menu-item>
-                                </md-menu-content>
-                            </md-menu>
-                        </div>
+    <md-tab  ng-repeat="tab in tabsEmployee" label={{tab.name}}>
+                <div  class="sag-product-search-box" flex="100">
+                    <span flex></span>
+
+                    <div layout="row" flex-gt-lg="40" flex-sm="40" flex-xs="100" style="margin-right: 2em">
+                        <md-icon style="margin-bottom: 1em"><i class="material-icons" flex="10">search</i></md-icon>
+                        <md-input-container flex="90" class="md-icon-float md-block sag-product-search-box-padding">
+                            <input ng-model="product.search" type="text" aria-label="something">
+                        </md-input-container>
                     </div>
-                </md-grid-tile>
-            </md-grid-list>
-        </md-content>
+
+                </div>
+            <md-content>
+                <md-grid-list
+                        md-cols-xs="1" md-cols-sm="2" md-cols-md="3" md-cols-gt-md="4"
+                        md-row-height="2:1"
+                        md-gutter="20px" md-gutter-gt-sm="8px" flex>
+                    <md-grid-tile md-rowspan="1" md-colspan="1" ng-repeat="emp in employee" >
+                        <div class="sag-employee-card md-whiteframe-4dp" md-ink-ripple="black" flex="100">
+                            <div layout="column" flex="80">
+                                <div layout="row">
+                                    <div class="sag-title">{{emp.name}}</div>
+                                </div>
+                                <div layout="row">
+                                    <div class="sag-title sag-subtitle">{{emp.mail}}</div>
+                                </div>
+                                <div layout="row">
+                                    <div ><img class="employee-image-container" src="http://res.cloudinary.com/droxr0kdp/image/upload/w_300,h_300,c_crop,g_face/w_200/v1482011353/{{emp.image}}" width="75" height="75" /></div>
+                                </div>
+                            </div>
+                            <div layout="column" flex="20" class="color-yellow" style="height: 100%">
+                                <md-menu md-offset="0-7">
+                                    <md-button class="md-fab md-mini md-raised"
+                                               ng-click="$mdOpenMenu($event)">
+                                        <md-tooltip md-direction="left">Menu</md-tooltip>
+                                        <md-icon md-menu-origin><i class="material-icons" style="color: black">format_list_bulleted</i></md-icon>
+                                    </md-button>
+                                    <md-menu-content width="2">
+                                        <md-menu-item ng-repeat="menu in menuEmployee">
+                                            <md-button><span class="md-menu-align-target" ng-click = "showDialog($event,menu.fun,emp)" >{{menu.name}}</span></md-button>
+                                        </md-menu-item>
+                                    </md-menu-content>
+                                </md-menu>
+                            </div>
+                        </div>
+                    </md-grid-tile>
+                </md-grid-list>
+            </md-content>
     </md-tab>
 </md-tabs>

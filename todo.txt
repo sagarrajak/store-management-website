@@ -30,12 +30,12 @@ milestone 3 :     19 dec 2016
                   *todo,
 
  milestone 4 :    creating about page*,
-                  create setting page,
-                  create login page,
+                  create setting page*,
+                  create login page,*
                   create dashboard page,
                   create product card*
                   create product add dialog*
-                  complete "remove product" dialog
+                  complete "remove product" dialog*
                   complete "category" dialog
                   complete list view for category
                   create brand schema and api

@@ -3,6 +3,7 @@
  */
 var mongoose = require('mongoose');
 var type = mongoose.Schema({
-    product_type : { type : String , require : true }
+    product_type : { type : String , require : true },
+    details : {  type : String  }
 });
 module.exports = mongoose.model( 'product_type' , type  );

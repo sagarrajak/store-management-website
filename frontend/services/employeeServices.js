@@ -25,9 +25,10 @@ angular
                                 var  data = {
                                     name          :  employee.name,
                                     date_of_birth :  new Date(1994,09,05),
+                                    date_of_join  :  new Date(2007,08,20),
                                     mail          :  employee.mail,
                                     pan_num       :  employee.panNum,
-                                    phone_number  :  employee.phoneNum,
+                                    phone_num     :  employee.phoneNum,
                                     image         :  employee.image
                                 };
                                 var config = {

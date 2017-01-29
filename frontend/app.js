@@ -61,12 +61,12 @@
                    Title : "Checkout"
                },
                {
-                   name : "Dashboard" ,
+                   name :  "Dashboard" ,
                    state : "home",
-                   Title :"Dashboard"
+                   Title : "Dashboard"
                },
                {
-                   name : "Product" ,
+                   name :  "Product" ,
                    state : "product",
                    Title : "Product"
                },
@@ -75,14 +75,15 @@
                    state : "home"
                },
                {
-                   name :  "Manage store" ,
-                   state : "home"
+                   name :  "Setting" ,
+                   state : "setting"
                },
                {
                    name : "Logout" ,
-                   state : "home"
+                   state : "login"
                }
            ];
+
 
            $scope.loadEmployee = function(){
                 employeeProvider.
@@ -117,30 +118,43 @@
             templateUrl : 'templates/sidenav.html',
         }
      })
-     .config(function( $stateProvider , $urlRouterProvider ){
+     .config(function( $stateProvider,$urlRouterProvider){
 
-            $urlRouterProvider.otherwise('/login');
-            $stateProvider
-                .state( "home" , {
-                     url : "/home",
-                     templateUrl : "templates/employee.html",
-                     controller  : function($scope){
+         $urlRouterProvider.otherwise('/login');
+         $stateProvider
+             .state("home", {
+                 url: "/home",
+                 templateUrl: "templates/employee.html",
+                 controller: function ($scope) {
 
-                     }
-                })
-                .state( "product",{
-                     url:"/product",
-                     templateUrl : "templates/product.html",
-                     controller  : function($scope){
+                 }
+             })
+             .state("product", {
+                 url: "/product",
+                 templateUrl: "templates/product.html",
+                 controller: function ($scope) {
 
-                     }
-                })
-                .state("about",{
-                    url: "/about",
-                    templateUrl : "templates/about.store.html",
-                    controller : function(){
+                 }
+             })
+             .state("about", {
+                 url: "/about",
+                 templateUrl: "templates/about.store.html",
+                 controller: function ($scope) {
 
-                    }
-                });
+                 }
+             })
+             .state('login',{
+                 url: "/login",
+                 templateUrl: "templates/login.html",
+                 controller: function ($scope) {
 
+                 }
+             })
+             .state('setting',{
+                 url : "/setting",
+                 templateUrl : "templates/setting.html",
+                 controller : function($scope){
+
+                 }
+             })
      });

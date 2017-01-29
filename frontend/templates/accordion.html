@@ -1,0 +1,15 @@
+<div class="sag-main-container" layout="column" ng-cloak>
+    <div class="sag-accordion md-whiteframe-4dp">
+        <div layout="row">
+            <h3>{{title}}</h3>
+            <span flex></span>
+            <md-button class="md-icon-button" layout-align="end-start" ng-click="hideElement()">
+                <md-icon ng-show="!Ahide"><i class="material-icons">keyboard_arrow_down</i></md-icon>
+                <md-icon ng-show="Ahide"><i class="material-icons">keyboard_arrow_up</i></md-icon>
+            </md-button>
+        </div>
+        <md-content>
+            <div ng-transclude  class="sag-transition"  ng-show="Ahide" ></div>
+        </md-content>
+    </div>
+</div>
