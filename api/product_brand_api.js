@@ -1,9 +1,36 @@
 var mongoose = require('mongoose');
 var brand = require('../schemas/product_brand');
-
+var cloudinary = require('../cloudinary_config');
 module.exports = function(app,express){
 
     var api = express.Router();
+
+    api.post('/image/',function(req,res){
+        if (req.files != undefined){
+            cloudinary.uploader.upload( req.files[0].path , function (result){
+                if ( result.error != undefined ){
+                    console.log(result.error);
+                    res.json(result);
+                }
+                else  res.status(200).json({message: result.public_id});
+            });
+        }
+        else res.status(400).send({message: "image not found"});
+    });
+
+    api.delete('/image/:id',function(){
+        Product
+            .find( { _id : req.params.id })
+            .select('image')
+            .exec(function(err,pro){
+                cloudinary.uploader.destroy( pro[0]['image'] ,function(result){
+                    if( result.error != undefined )
+                        res.json(result);
+                    else
+                        res.status(200).json({message:"Image deleted successfully"})
+                });
+            });
+    });
     api.post('/',function(req,res){
         new brand({
             brand   : req.body.brand ,
@@ -29,7 +56,7 @@ module.exports = function(app,express){
                 else
                     res
                         .status(200)
-                        .json({message:"employee removed successfully"});
+                        .json({message:"brand removed successfully"});
             });
     });
 
@@ -47,8 +74,9 @@ module.exports = function(app,express){
 
     api.get('/:id',function(req,res){
 
+
         brand
-            .find({ _id : req.params.id })
+            .findOne({ _id : req.params.id })
               .exec(
                   function(err,out){
                     if(err)

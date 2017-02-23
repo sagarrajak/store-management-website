@@ -1,7 +1,7 @@
 var mongoose = require('mongoose');
 var employee = require('../schemas/employee');
 var fileUpload = require('express-fileupload');
-var cloudinary = require("../../cloudinary_config");
+var cloudinary = require("../cloudinary_config");
 
 
 module.exports = function(app,express){
@@ -9,7 +9,6 @@ module.exports = function(app,express){
     var api = express.Router();
 
     api.post('/upload-employee-image',function(req,res){
-
         if (req.files != undefined) {
             cloudinary.uploader.upload(req.files[0].path, function (result){
                 if (result.error != undefined){

@@ -7,9 +7,7 @@ module.exports =  function(app,express){
 
     var api = express.Router();
     api.post('/',function(req,res){
-
         new stock({
-
             quantity    : req.body.quantity ,
             seller      : req.body.seller ,
             product     : req.body.product ,

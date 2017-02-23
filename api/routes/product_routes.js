@@ -30,13 +30,11 @@ module.exports = function(app,express){
             );
     });
 
+
     //all product with brand of id
     api.get( '/search-by-brand/:id' , function(req,res){
         product
             .find({'brand':req.params.id})
-            .populate('brand')
-            .populate('retailer')
-            .populate('type')
             .exec(
                 function(err,out){
                     if(err)
@@ -49,8 +47,9 @@ module.exports = function(app,express){
             );
     });
 
+
     //all product with all brand
-    api.get( '/' , function(req,res){
+    api.get('/',function(req,res){
         product
             .find()
             .populate('brand')
@@ -66,6 +65,30 @@ module.exports = function(app,express){
                             .send(out);
                 }
             );
+    });
+
+    //sort product with price
+    api.get('/price/:id',function(req,res){
+
+        product
+            .find()
+            .sort({'price':req.params.id})
+            .exec(function(err,out){
+                if(err)
+                   res.send(err);
+                else
+                  res
+                      .status(200)
+                      .send(out);
+            });
+
+    });
+    //sort product by id
+    api.get('/name/:id', function(req,res){
+
+
+
+
     });
 
 

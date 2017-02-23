@@ -3,7 +3,7 @@
  */
 var  mongoose =  require('mongoose');
 var  retailer = require('../schemas/retailer');
-var cloudinary = require("../../cloudinary_config");
+var cloudinary = require("../cloudinary_config");
 
 module.exports = function(app,express){
 

@@ -1,0 +1,33 @@
+{
+  "name": "sagar",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "dependencies": {
+    "angular": "^1.5.7",
+    "angular-animate": "^1.5.9",
+    "angular-aria": "^1.5.9",
+    "angular-fx": "^1.1.0",
+    "angular-material": "^1.1.1",
+    "angular-ui-router": "^0.3.2",
+    "angular-ui-router.statehelper": "^1.3.1",
+    "bcryptjs": "^2.3.0",
+    "body-parser": "^1.15.2",
+    "cloudinary": "^1.4.6",
+    "express": "^4.14.0",
+    "express-fileupload": "0.0.5",
+    "jsonwebtoken": "^7.0.1",
+    "mongoose": "^4.5.3",
+    "morgan": "^1.7.0",
+    "multer": "^1.2.1",
+    "multiparty": "^4.1.2",
+    "ng-file-upload": "^12.2.13",
+    "password-hash": "^1.2.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
