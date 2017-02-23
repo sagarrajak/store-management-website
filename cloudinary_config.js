@@ -3,8 +3,8 @@
  */
 var cloudinary = module.require('cloudinary');
 cloudinary.config({
-    cloud_name : "droxr0kdp",
-    api_key :"595873315767237",
-    api_secret :"6YqfzkJsn7hVvkqHWRV7mxVvdl4"
+    cloud_name : "yourclodinaryname",
+    api_key :"your_api_key",
+    api_secret :"your_api_secreat_key"
 });
 module.exports = cloudinary;
